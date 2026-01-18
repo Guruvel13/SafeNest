@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, ChevronRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroImg from '../assets/hero-bedroom.png';
 
 export default function Hero() {
@@ -30,20 +31,23 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-indigo-600/30 hover:bg-indigo-700 transition-all flex items-center gap-2"
-                            >
-                                Book a Visit <ChevronRight size={20} />
-                            </motion.button>
-                            <motion.button
+                            <Link to="/book-visit">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-indigo-600/30 hover:bg-indigo-700 transition-all flex items-center gap-2"
+                                >
+                                    Book a Visit <ChevronRight size={20} />
+                                </motion.button>
+                            </Link>
+                            <motion.a
+                                href="#pricing"
                                 whileHover={{ scale: 1.05, backgroundColor: "rgba(243, 244, 246, 1)" }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-8 py-4 bg-white text-slate-700 border-2 border-gray-200 rounded-xl font-bold text-lg hover:border-indigo-200 transition-all"
+                                className="px-8 py-4 bg-white text-slate-700 border-2 border-gray-200 rounded-xl font-bold text-lg hover:border-indigo-200 transition-all inline-block"
                             >
                                 View Pricing
-                            </motion.button>
+                            </motion.a>
                         </div>
                     </motion.div>
 
