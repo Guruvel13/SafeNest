@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Home, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -10,12 +11,12 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <Link to="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
                         <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
                             <Home className="text-white w-5 h-5" />
                         </div>
                         <span className="font-bold text-2xl tracking-tight text-slate-900">SafeNest</span>
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
@@ -29,7 +30,7 @@ export default function Navbar() {
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-full shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all"
                         >
-                            Book a Visit
+                            <Link to="/book-visit">Book a Visit</Link>
                         </motion.button>
                     </div>
 
@@ -59,7 +60,7 @@ export default function Navbar() {
                             ))}
                             <div className="mt-4 pt-4 border-t border-gray-100">
                                 <button className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                                    Book a Visit
+                                    <Link to="/book-visit">Book a Visit</Link>
                                 </button>
                             </div>
                         </div>
