@@ -99,14 +99,7 @@ export default function Security() {
                                             <div className={`w-full h-full ${activeCamera === 0 ? 'bg-indigo-950' : activeCamera === 1 ? 'bg-slate-900' : 'bg-purple-950'} flex flex-col items-center justify-center`}>
 
                                                 {activeCamera === 0 ? (
-                                                    <video
-                                                        src={securityVideo}
-                                                        autoPlay
-                                                        loop
-                                                        muted
-                                                        playsInline
-                                                        className="w-full h-full object-cover"
-                                                    />
+                                                    <img src={securityImg} className="w-full h-full object-cover" alt="Security Feed" />
                                                 ) : (
                                                     <div className="flex flex-col items-center opacity-40">
                                                         <div className="w-20 h-20 rounded-full border-2 border-white/20 border-t-white/80 animate-spin mb-4"></div>

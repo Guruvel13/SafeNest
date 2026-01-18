@@ -26,6 +26,7 @@ export default function Pricing() {
                             price: '18,000',
                             deposit: '25,000',
                             badge: 'PRIVATE',
+                            badgeColor: 'bg-orange-100 text-orange-700',
                             features: ['Private Balcony', 'Attached Bath', 'Smart TV'],
                             popular: false
                         },
@@ -34,6 +35,7 @@ export default function Pricing() {
                             price: '12,000',
                             deposit: '15,000',
                             badge: 'STANDARD',
+                            badgeColor: 'bg-indigo-100 text-indigo-700',
                             features: ['Personal Closet', 'Study Corner', 'Shared Balcony'],
                             popular: true
                         },
@@ -42,6 +44,7 @@ export default function Pricing() {
                             price: '9,500',
                             deposit: '10,000',
                             badge: 'ECONOMY',
+                            badgeColor: 'bg-green-100 text-green-700',
                             features: ['Spacious Room', 'Shared Utilities', 'Housekeeping'],
                             popular: false
                         },
@@ -50,6 +53,7 @@ export default function Pricing() {
                             price: '7,500',
                             deposit: '8,000',
                             badge: 'BUDGET',
+                            badgeColor: 'bg-yellow-100 text-yellow-700',
                             features: ['Personal Lockers', 'Daily Meals', 'RO Water'],
                             popular: false
                         },
@@ -72,8 +76,7 @@ export default function Pricing() {
 
                             <div className="flex justify-between items-start mb-6">
                                 <h4 className="text-xl font-bold text-slate-900">{plan.type}</h4>
-                                <span className={`text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider ${plan.popular ? 'bg-indigo-100 text-indigo-700' : 'bg-gray-100 text-gray-500'
-                                    }`}>
+                                <span className={`text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider ${plan.badgeColor}`}>
                                     {plan.badge}
                                 </span>
                             </div>
