@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Shield, Heart, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Video, Fingerprint, Battery, ChevronLeft, ChevronRight, User, Shield } from 'lucide-react';
 import securityImg from '../assets/security-illustration.png'
 // import securityVideo from '../assets/sample.mp4';
 
@@ -22,27 +22,21 @@ export default function Security() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-slate-700 backdrop-blur-md text-indigo-400 text-sm font-semibold mb-8 shadow-lg shadow-indigo-900/20">
-                            <span className="relative flex h-2 w-2 mr-1">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                            </span>
-                            Safety Log You Can Trust
+                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-pink-500/20 text-pink-500 text-xs font-bold uppercase tracking-widest mb-10 bg-pink-500/5">
+                            <Shield className="w-4 h-4" />
+                            SAFEZONE CERTIFIED
                         </div>
 
-                        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                        <h2 className="text-4xl lg:text-6xl font-extrabold text-white mb-12 leading-tight tracking-tight">
                             Uncompromising <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Security Protocols</span>
+                            Security Protocols
                         </h2>
-                        <p className="text-slate-400 text-lg mb-10 max-w-lg leading-relaxed">
-                            We combine advanced technology with strict physical protocols to ensure a fortress-like environment for our residents.
-                        </p>
 
-                        <div className="space-y-5">
+                        <div className="space-y-6">
                             {[
-                                { title: 'AI-Powered CCTV', desc: '360-degree surveillance with facial recognition and activity logs for public safety.', icon: Zap, color: 'indigo' },
-                                { title: 'Biometric Entry', desc: 'Fingerprint access ensures only verified residents enter the premises.', icon: Shield, color: 'purple' },
-                                { title: 'Female-Only Staff', desc: 'All critical operations staff and management are female for maximum comfort.', icon: Heart, color: 'pink' },
+                                { title: 'CCTV Powered Security', desc: '360-degree surveillance in all common areas and building entry points with 30-day cloud backup.', icon: Video },
+                                { title: 'Biometric Entry', desc: 'Smart face & fingerprint recognition for entry. No unauthorized visitors without prior approval.', icon: Fingerprint },
+                                { title: 'Female-Only Staff', desc: 'All in-house wardens, kitchen staff, and management are females for maximum comfort.', icon: User },
                             ].map((item, idx) => (
                                 <motion.div
                                     key={idx}
@@ -50,16 +44,14 @@ export default function Security() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.1 }}
                                     whileHover={{ scale: 1.02 }}
-                                    className="group relative p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/80 transition-all duration-300 shadow-lg"
+                                    className="group flex gap-6 p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all duration-300"
                                 >
-                                    <div className="flex gap-5 items-start">
-                                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-${item.color}-500/20 to-${item.color}-600/10 flex items-center justify-center text-${item.color}-400 group-hover:text-${item.color}-300 ring-1 ring-${item.color}-500/30 group-hover:ring-${item.color}-500/60 transition-all duration-300 shadow-inner shadow-${item.color}-500/10`}>
-                                            <item.icon className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-bold text-lg mb-2 group-hover:text-indigo-300 transition-colors">{item.title}</h4>
-                                            <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">{item.desc}</p>
-                                        </div>
+                                    <div className="w-16 h-16 rounded-2xl border border-slate-700 bg-slate-800/50 flex items-center justify-center flex-shrink-0 text-pink-500">
+                                        <item.icon className="w-7 h-7 stroke-[1.5]" />
+                                    </div>
+                                    <div className="flex flex-col justify-center">
+                                        <h4 className="text-white font-bold text-xl mb-2">{item.title}</h4>
+                                        <p className="text-slate-400 text-sm leading-relaxed max-w-sm">{item.desc}</p>
                                     </div>
                                 </motion.div>
                             ))}
