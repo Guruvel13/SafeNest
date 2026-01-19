@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Home, Menu, X } from 'lucide-react';
 
+import logo from '../assets/safenest-logo.png';
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,9 +14,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                        <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
-                            <Home className="text-white w-5 h-5" />
-                        </div>
+                        <img src={logo} alt="SafeNest Logo" className="w-10 h-10 object-contain" />
                         <span className="font-bold text-2xl tracking-tight text-slate-900">SafeNest</span>
                     </Link>
 
