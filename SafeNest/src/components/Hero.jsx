@@ -119,10 +119,10 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-6"
+                            className="text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-tight mb-6"
                         >
                             Elevate Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 animate-gradient-x inline-block">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 animate-gradient-x inline-block pb-2">
                                 Living Standard
                             </span>
                         </motion.h1>
