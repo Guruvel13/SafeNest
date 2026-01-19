@@ -16,10 +16,10 @@ export default function LandingPage() {
             <Navbar />
             <Hero />
             <Stats />
-            <Pricing />
             <Amenities />
             <Security />
             <CommunityRules />
+            <Pricing />
             <Testimonials />
             <Visit />
             <Footer />
